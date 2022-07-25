@@ -5,13 +5,13 @@ const refs = {
   input: document.querySelector("#name-input"),
   output: document.querySelector("#name-output"),
 };
-//Вешаю слушателя событий 'input' на инпут
-refs.input.addEventListener("input", onInputChange);
 
-function onInputChange(event) {
-  if (event.target.value === "") {
+const onInputChange = (event) => {
+  if (event.currentTarget.value === "") {
     refs.output.textContent = "Anonymous";
   } else {
-    refs.output.textContent = event.target.value;
+    refs.output.textContent = event.currentTarget.value;
   }
-}
+};
+
+refs.input.addEventListener("input", onInputChange);
