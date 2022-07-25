@@ -21,7 +21,9 @@ const images = [
 const listRef = document.querySelector(".gallery");
 //С помощью метода мар() перебираем массив и на каждой итерации получаем шаблонную строку со значениями для src и alt
 
-const image = images.map((elem) => `<img src= ${elem.url} alt= ${elem.alt}>`);
+const image = images
+  .map((elem) => `<li><img src= ${elem.url} alt= ${elem.alt}></li>`)
+  .join("");
 
 //С помощью метода insertAdjacentHTML() добавляем внутрь имеющегося ul полученные строки
 listRef.insertAdjacentHTML("afterbegin", image);
