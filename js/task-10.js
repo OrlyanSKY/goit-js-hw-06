@@ -14,9 +14,10 @@ refs.createBtn.addEventListener("click", createBoxes);
 refs.destroyBtn.addEventListener("click", destroyBoxes);
 
 function createBoxes(amount) {
+  amount = refs.inputField.value;
   let divSize = 30;
 
-  for (let i = 0; i < refs.inputField.value; i++) {
+  for (let i = 0; i < amount; i++) {
     const innerDiv = document.createElement("div");
 
     innerDiv.style.width = `${divSize}px`;

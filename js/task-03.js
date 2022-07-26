@@ -28,4 +28,6 @@ const image = images
 //С помощью метода insertAdjacentHTML() добавляем внутрь имеющегося ul полученные строки
 listRef.insertAdjacentHTML("afterbegin", image);
 
+listRef.classList.add("gallery--flexed");
+
 //Осталось дело за малым , минимальное оформление с помощью CSS
