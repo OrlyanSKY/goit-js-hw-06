@@ -10,12 +10,13 @@ const refs = {
   boxes: document.querySelector("#boxes"),
 };
 
+let divSize = 30;
+
 refs.createBtn.addEventListener("click", createBoxes);
 refs.destroyBtn.addEventListener("click", destroyBoxes);
 
 function createBoxes(amount) {
   amount = refs.inputField.value;
-  let divSize = 30;
 
   for (let i = 0; i < amount; i++) {
     const innerDiv = document.createElement("div");
@@ -31,5 +32,6 @@ function createBoxes(amount) {
 }
 
 function destroyBoxes() {
+  divSize = 30;
   refs.boxes.innerHTML = "";
 }

@@ -10,12 +10,13 @@ function onFormSubmit(event) {
 
   if (email === "" || password === "") {
     alert("Fill in all the fields!");
+    return;
   }
 
-  const formData = new FormData(event.currentTarget);
-  formData.forEach((value, name) => {
-    console.log(name, value);
-  });
-
+  const formData = {
+    email,
+    password,
+  };
+  console.log(formData);
   event.currentTarget.reset();
 }

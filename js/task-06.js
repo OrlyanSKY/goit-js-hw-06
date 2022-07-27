@@ -5,16 +5,19 @@
 
 const inputRef = document.querySelector("#validation-input");
 
-inputRef.addEventListener("blur", onInputBlur);
-
 const stringLength = inputRef.getAttribute("data-length");
+
+inputRef.addEventListener("blur", onInputBlur);
 
 function onInputBlur(event) {
   const target = event.currentTarget;
 
   if (target.value.length === Number(stringLength)) {
-    target.classList.replace("invalid", "valid");
+    target.classList.add("valid");
+    target.classList.remove("invalid");
+
     return;
   }
   target.classList.add("invalid");
+  target.classList.remove("valid");
 }
